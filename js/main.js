@@ -1,8 +1,7 @@
 var sections = document.querySelectorAll('section');
 var navLinks = document.querySelectorAll('.nav-link');
-
-
-
+var tabs = document.querySelectorAll('.tab-btn');
+var projects = document.querySelectorAll('.project');
 var themeBtn = document.getElementById('themeBtn');
 
 themeBtn.addEventListener('click', function () {
@@ -40,5 +39,55 @@ window.addEventListener('scroll', function () {
         }
 
     });
+
+});
+
+
+tabs.forEach(tab => {
+
+    tab.addEventListener('click', function () {
+
+        tabs.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        this.classList.add('active');
+
+        const category = this.dataset.category;
+
+        projects.forEach(project => {
+
+            if (
+                category === 'all' ||
+                project.classList.contains(category)
+            ) {
+
+                project.style.display = 'block';
+
+            } else {
+
+                project.style.display = 'none';
+
+            }
+
+        });
+
+    });
+
+});
+projects.forEach(project => {
+
+    if (
+        category === 'all' ||
+        project.classList.contains(category)
+    ) {
+
+        project.classList.remove('d-none');
+
+    } else {
+
+        project.classList.add('d-none');
+
+    }
 
 });
