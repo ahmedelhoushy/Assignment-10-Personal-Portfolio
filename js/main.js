@@ -4,6 +4,7 @@ var tabs = document.querySelectorAll('.tab-btn');
 var projects = document.querySelectorAll('.project');
 var themeBtn = document.getElementById('themeBtn');
 
+
 themeBtn.addEventListener('click', function () {
 
     document.documentElement.classList.toggle('dark');
@@ -75,19 +76,71 @@ tabs.forEach(tab => {
     });
 
 });
-projects.forEach(project => {
+// projects.forEach(project => {
 
-    if (
-        category === 'all' ||
-        project.classList.contains(category)
-    ) {
+//     if (
+//         category === 'all' ||
+//         project.classList.contains(category)
+//     ) {
 
-        project.classList.remove('d-none');
+//         project.classList.remove('d-none');
 
-    } else {
+//     } else {
 
-        project.classList.add('d-none');
+//         project.classList.add('d-none');
+
+//     }
+
+// });
+
+
+const cards = document.querySelectorAll('.testimonial-card');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+
+let currentIndex = 0;
+const cardsPerView = 3;
+
+function showTestimonials() {
+
+    cards.forEach(card => {
+        card.classList.add('d-none');
+    });
+
+    for (let i = currentIndex; i < currentIndex + cardsPerView; i++) {
+
+        if (cards[i]) {
+            cards[i].classList.remove('d-none');
+        }
 
     }
 
+}
+
+showTestimonials();
+nextBtn.addEventListener('click', () => {
+
+    currentIndex++;
+
+    if (currentIndex > cards.length - cardsPerView) {
+        currentIndex = 0;
+    }
+
+    showTestimonials();
+
 });
+
+prevBtn.addEventListener('click', () => {
+
+    currentIndex--;
+
+    if (currentIndex < 0) {
+        currentIndex = cards.length - cardsPerView;
+    }
+
+    showTestimonials();
+
+});
+
+
+
