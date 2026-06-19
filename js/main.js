@@ -17,8 +17,8 @@ window.addEventListener('scroll', function () {
 
     sections.forEach(function(section){
 
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.offsetHeight;
+        var sectionTop = section.offsetTop - 100;
+        var sectionHeight = section.offsetHeight;
 
         if(
             window.scrollY >= sectionTop &&
@@ -94,12 +94,12 @@ tabs.forEach(tab => {
 // });
 
 
-const cards = document.querySelectorAll('.testimonial-card');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
+var cards = document.querySelectorAll('.testimonial-card');
+var nextBtn = document.getElementById('nextBtn');
+var prevBtn = document.getElementById('prevBtn');
 
-let currentIndex = 0;
-const cardsPerView = 3;
+var currentIndex = 0;
+var cardsPerView = 3;
 
 function showTestimonials() {
 
@@ -142,5 +142,61 @@ prevBtn.addEventListener('click', () => {
 
 });
 
+var scrollTopBtn = document.getElementById('scrollTopBtn');
 
+window.addEventListener('scroll', function(){
 
+    if(window.scrollY > 300){
+        scrollTopBtn.classList.add('show');
+    }else{
+        scrollTopBtn.classList.remove('show');
+    }
+
+});
+
+scrollTopBtn.addEventListener('click', function(){
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+});
+
+var gearBtn = document.getElementById('gearBtn');
+var settingsPanel = document.getElementById('settingsPanel');
+
+gearBtn.addEventListener('click', function(){
+
+    settingsPanel.classList.toggle('open');
+
+});
+
+var colors = document.querySelectorAll('.color');
+
+colors.forEach(color => {
+
+    color.addEventListener('click', function(){
+        document.documentElement.style.setProperty(
+            '--main-color',
+            this.dataset.color
+        );
+    });
+});
+
+var fontBtns = document.querySelectorAll('.font-btn');
+fontBtns.forEach(btn => {
+
+    btn.addEventListener('click', function(){
+
+        fontBtns.forEach(item => {
+            item.classList.remove('active-font');
+        });
+
+        this.classList.add('active-font');
+
+        document.body.style.fontFamily = this.dataset.font;
+
+    });
+
+});

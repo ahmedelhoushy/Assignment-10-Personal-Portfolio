@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Tajawal&family=Almarai&display=swap" rel="stylesheet">
 </head>
 <body>
 <!-- ======= Header ======= -->
@@ -66,6 +66,43 @@
                 </div>
             </div>
         </div>
+        <button id="scrollTopBtn">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<div id="settingsPanel">
+
+    <div id="gearBtn">
+        <i class="fa-solid fa-gear"></i>
+    </div>
+
+    <h3>تخصيص الموقع</h3>
+
+    <h5>الألوان</h5>
+
+    <div class="colors">
+        <span class="color" data-color="#9C58F6"></span>
+        <span class="color" data-color="#3B82F6"></span>
+        <span class="color" data-color="#10B981"></span>
+        <span class="color" data-color="#F59E0B"></span>
+        <span class="color" data-color="#EF4444"></span>
+    </div>
+
+    <h5>الخطوط</h5>
+
+    <button class="font-btn" data-font="Cairo">
+        Cairo
+    </button>
+
+    <button class="font-btn" data-font="Tajawal">
+        Tajawal
+    </button>
+
+    <button class="font-btn" data-font="Almarai">
+        Almarai
+    </button>
+
+</div>
     </div>
 </section>
 
@@ -773,14 +810,141 @@
         <h2>
              <span>  يلا نبدأ</span>  مشروعك
         </h2>
-        <p>عندك فكرة مشروع؟ تعالى نتكلم ونحولها لواقع</p>
 </div>
 <div class="row">
-    <div class="col-md-6"></div>
-    <div class="col-md-6"></div>
+        <p>عندك فكرة مشروع؟ تعالى نتكلم ونحولها لواقع</p>
+
+    <div class="col-md-6">
+        <div class="contact-box">
+            <i class="fa-solid fa-envelope fa-2xl"></i>
+                 <div class="contact-info">
+                <h3>البريد الإلكتروني</h3>
+            <h2>ahmed@example.com</h2>
+            <p>جاهز للرد خلال 24 ساعة</p>
+            </div>
+           
+        </div>
+         <div class="contact-box">
+            <i class="fa-solid fa-phone fa-2xl"></i>
+                 <div class="contact-info">
+                <h3> رقم الهاتف</h3>
+            <h2>+20 10 1234 5678</h2>
+            <p> متاح من 9 صباحاً - 5 مساءً</p>
+            </div>
+        </div>
+         <div class="contact-box">
+           <i class="fa-solid fa-location-dot fa-2xl"></i>
+                 <div class="contact-info">
+                <h3>  الموقع</h3>
+            <h2>القاهرة، مصر</h2>
+            <p> متاح للعمل عن بعد</p>
+            </div>
+        </div>
+        <div class="links-box">
+            <h3>تابعني على</h3>
+            <div class="links">
+                <i class="fa-brands fa-behance"></i>
+                <i class="fa-solid fa-basketball"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-github"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <form action="">
+            <label for="fristName">الاسم الكامل</label>
+            <input type="text" name="fristName" id="fristName" class="form-control" placeholder="ادخل اسمك بالكامل">
+
+            <label for="emailAddress"> البريد الإلكتروني</label>
+            <input type="email" name="emailAddress" id="emailAddress" class="form-control" placeholder="example@gmail.com">
+
+             <label for="phoneNumber"> رقم الهاتف </label>
+            <input type="number" name="phoneNumber" id="phoneNumber" class="form-control" placeholder="+20 10 xxxx xxxx">
+            
+            <label for="">نوع المشروع</label>
+            <select id="projectType" class="form-select" name="projectType">
+        <option selected disabled>اختر نوع المشروع</option>
+        <option>موقع ويب</option>
+        <option> تطبيق ويب</option>
+        <option> تطبيق جوال</option>
+        <option> تصميم UI/UX</option>
+        <option>استشارة تقنية</option>
+    </select>
+
+
+            <label for=""> الميزانية المتوقعة</label>
+             <select id="budget" class="form-select" name="budget">
+        <option selected disabled>اختر الميزانية</option>
+        <option>أقل من 20,000 جنيه</option>
+        <option>20,000 - 50,000 جنيه</option>
+        <option>50,000 - 100,000 جنيه</option>
+        <option>أكثر من 100,000 جنيه</option>
+    </select>
+
+  <label for="message">تفاصيل المشروع</label>
+    <textarea
+        id="message"
+        class="form-control"
+        rows="5"
+        placeholder="اكتب تفاصيل مشروعك هنا..."
+    ></textarea>
+
+<button class="btn contact-btn" type="button"><i class="fa-solid fa-paper-plane"></i> ابعت الرسالة </button>
+        </form>
+    </div>
 </div>
     </div>
 </section>
+
+<footer id="footer" class="pading-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                 <div class="d-flex align-items-center justify-content-between" >
+   <div class="logo">
+    <i class="fa-solid fa-code"></i>
+    <p class="mb-0">أحمد حسن</p>
+</div>
+    </div>
+    <p>أؤمن بأن البرمجة فن. هدفي مش بس كتابة كود، بل خلق تجربة مستخدم سلسة بتسيب أثر. بدمج التصميم الجمالي مع الأداء القوي عشان أقدم منتج نهائي متكامل.</p>
+    <div class="cv">
+        <i class="fa-solid fa-file-arrow-up"></i>
+        <div class="">
+            <p>تعرف على خبراتي</p>
+            <h2>حمل السيرة الذاتية (CV)</h2>
+        </div>
+    </div>
+    <p>أعمل حالياً على: مشروع SaaS لإدارة الفريق</p>
+            </div>
+            <div class="col-md-3">
+              <ul>
+                <li><h2>روابط سريعة</h2></li>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">عني</a></li>
+                <li><a href="#">الأعمال</a></li>
+                <li><a href="#">الخبرة</a></li>
+                <li><a href="#">التوصيات</a></li>
+                <li><a href="#">تواصل</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+                  <ul>
+                <li><h2> الخدمات</h2></li>
+                <li><a href="#">تطوير الويب</a></li>
+                <li><a href="#">تطوير التطبيقات</a></li>
+                <li><a href="#">تصميم UI/UX</a></li>
+                <li><a href="#">الاستشارات التقنية</a></li>
+                <li><a href="#">تحسين الأداء</a></li>
+                <li><a href="#">الصيانة والدعم</a></li>
+              </ul>
+            </div>
+        </div>
+        <div class="copyright">
+    © 2025 أحمد حسن. جميع الحقوق محفوظة.
+</div>
+    </div>
+</footer>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
